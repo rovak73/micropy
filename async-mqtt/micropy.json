@@ -6,7 +6,9 @@
     "dev-packages": {
         "micropy-cli": "*"
     },
-    "packages": {},
+    "packages": {
+        "micropython-mqtt-async": "*"
+    },
     "config": {
         "vscode": true,
         "pylint": true
