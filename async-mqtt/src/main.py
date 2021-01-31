@@ -1,13 +1,19 @@
 import time
+import blynklib
 from time import sleep
 from machine import Pin
 
 
+# BLYNK
 
+BLYNK_AUTH = '25tNT5eqiZN-9WcOURHTtmP40CZSyEyX' #insert your Auth Token here
+# base lib init
+blynk = blynklib.Blynk(BLYNK_AUTH)
 
 # Define constants
 
 #PUB_TIME_SEC = 10
+
 
 
 
@@ -63,6 +69,9 @@ def do_connect():
             pass
     print('network config:', wlan.ifconfig())
     ip = wlan.ifconfig()
+    print("Connecting to Blynk server...")
+    blynk = blynklib.Blynk(BLYNK_AUTH)
+    adc = machine.ADC(0)
     return ip
 
 def netConnect():
