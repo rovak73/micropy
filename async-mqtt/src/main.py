@@ -1,6 +1,7 @@
-from machine import Pin
 import time
 from time import sleep
+from machine import Pin
+
 
 
 
@@ -13,8 +14,8 @@ from time import sleep
 
 # RELAY
 
-rel_1 = machine.Pin(14, machine.Pin.OUT)
-rel_2 = machine.Pin(15, machine.Pin.OUT)
+rel_1 = Pin(14, Pin.OUT)
+rel_2 = Pin(15, Pin.OUT)
 
 
 def readRel_1():
@@ -77,8 +78,8 @@ def netConnect():
             encode_led(' sos ')
             pass
     print('network OK.')
-    #blinkLed_2(1)
-    uasyncio.run(blink(Pin(16), 1500))
+    blinkLed_2(1)
+    #uasyncio.run(blink(Pin(16), 1500))
     return wlan
 
 
@@ -270,9 +271,9 @@ def displayData(extTemp, buttonState, ip, rel_1_state, rel_2_state):
     oled.fill(0)
     oled.text("Temp:   " + str(extTemp) + " oC", 0, 4)
     oled.text("Button: " + str(buttonState), 0, 16)
-    oled.text("IP:     " + str(ip), 0, 28)
-    oled.text("Rel_1:  " + str(rel_1_state), 0, 40)
-    oled.text("Rel_2:  " + str(rel_2_state), 0, 52)
+    oled.text("Rel_1:  " + str(rel_1_state), 0, 28)
+    oled.text("Rel_2:  " + str(rel_2_state), 0, 40)
+    oled.text("IP:" + str(ip), 0, 52)
     oled.show()
 
 # Clear display :

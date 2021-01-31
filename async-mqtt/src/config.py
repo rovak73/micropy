@@ -1,2 +1,0 @@
-WIFI_SSID = 'VTR-3040963'
-WIFI_PASS = '5djkhmJXzzdw'
